@@ -29,9 +29,10 @@ export default function Sidebar() {
             <nav className={styles.sidebarNav}>
                 <ul>
                     {sidebarNavLink.map(sidebarNavLink => 
-                        <li className={styles.sidebarNavItem}>
+                   
+                        <li key={sidebarNavLink} className={styles.sidebarNavItem}>
                         <Link className={
-                                location.pathname === `/{sidebarNavLink}`
+                                location.pathname === `/${sidebarNavLink}`
                                 ? styles.sidebarNavLinkActive 
                                 : styles.sidebarNavLink
                             } 
@@ -39,8 +40,9 @@ export default function Sidebar() {
                                
                             {sidebarNavLink.charAt(0).toUpperCase() + 
                              sidebarNavLink.slice(1)} 
+                              
                         </Link>
-                       
+                        
                     </li>
                 )}
                 </ul>
